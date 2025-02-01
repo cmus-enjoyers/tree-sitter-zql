@@ -2,11 +2,12 @@
   "name": "tree-sitter-zql",
   "version": "0.1.0",
   "description": "Zql grammar for tree-sitter",
-  "repository": "https://github.com/tree-sitter/tree-sitter-zql",
-  "license": "MIT",
-  "author": {
-    "name": "ThunderFlight"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tree-sitter/tree-sitter-zql.git"
   },
+  "license": "MIT",
+  "author": "ThunderFlight",
   "main": "bindings/node",
   "types": "bindings/node",
   "keywords": [
@@ -27,11 +28,11 @@
   ],
   "dependencies": {
     "node-addon-api": "^8.2.1",
-    "node-gyp-build": "^4.8.2"
+    "node-gyp-build": "^4.8.2",
+    "tree-sitter-cli": "^0.24.7"
   },
   "devDependencies": {
-    "prebuildify": "^6.0.1",
-    "tree-sitter-cli": "^0.24.7"
+    "prebuildify": "^6.0.1"
   },
   "peerDependencies": {
     "tree-sitter": "^0.21.1"
@@ -46,5 +47,10 @@
     "prestart": "tree-sitter build --wasm",
     "start": "tree-sitter playground",
     "test": "node --test bindings/node/*_test.js"
-  }
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/tree-sitter/tree-sitter-zql/issues"
+  },
+  "homepage": "https://github.com/tree-sitter/tree-sitter-zql#readme"
 }
