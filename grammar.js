@@ -8,7 +8,7 @@
 // @ts-check
 
 module.exports = grammar({
-  name: "my_language", // Name of your custom language
+  name: "zql",
 
   rules: {
     source_file: ($) => repeat($._statement),
@@ -37,7 +37,7 @@ module.exports = grammar({
         choice(seq("contains", $.string), seq("is", $.string)),
       ),
 
-    identifier: ($) => /[A-Za-z0-9_-]+/, // Matches alphanumeric, underscores, and hyphens
+    identifier: ($) => /[A-Za-z0-9_-]+/,
     string: ($) => seq('"', /[^"]*/, '"'),
   },
 });

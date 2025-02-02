@@ -5,7 +5,7 @@
       "camelcase": "Zql",
       "scope": "source.zql",
       "file-types": [
-        ".zql"
+        "zql"
       ],
       "highlights": [
         "queries/highlights.scm"

@@ -1,10 +1,11 @@
-"add" @keyword
-"all" @keyword
-"where" @keyword
-"contains" @keyword
-"from" @keyword
-"is" @keyword
-(identifier) @identifier
+[
+"add"
+"all"
+"from"
+"where"
+"contains"
+"is"
+] @keyword
+
+(identifier) @variable
 (string) @string
-
-

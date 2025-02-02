@@ -1,6 +1,14 @@
 {
   "name": "tree-sitter-zql",
   "version": "0.1.0",
+  "tree-sitter": [
+    {
+      "scope": "source.zql",
+      "file-types": [
+        ".zql"
+      ]
+    }
+  ],
   "description": "Zql grammar for tree-sitter",
   "repository": {
     "type": "git",
