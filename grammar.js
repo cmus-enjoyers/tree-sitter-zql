@@ -11,15 +11,14 @@ module.exports = grammar({
   name: "zql",
 
   rules: {
-    source_file: ($) => repeat($._statement),
-    _statement: ($) => choice($.addFrom_statement),
-    //require_statement: ($) => seq("require", repeat($._statement)),
-    //add_statement: ($) => seq("add"),
-    //all_statement: ($) => seq("all"),
-    //from_statement: ($) => seq("from"),
-    //where_statement: ($) => seq("where"),
-    //contains_statement: ($) => seq("contains"),
-    //is_statement: ($) => seq("is"),
+    source_file: ($) => repeat(choice($._statement, $.comment)),
+    _statement: ($) =>
+      choice($.addFrom_statement, $.require_statement, $.hide_statement),
+    require_statement: ($) =>
+      seq(
+        "require",
+        repeat(seq($.identifier, optional(seq("as", $.identifier)))),
+      ),
 
     addFrom_statement: ($) =>
       seq(
@@ -30,6 +29,9 @@ module.exports = grammar({
         ),
         optional($.whereContains_statement),
       ),
+
+    hide_statement: ($) => seq("hide", $.identifier),
+
     whereContains_statement: ($) =>
       seq(
         "where",
@@ -37,6 +39,7 @@ module.exports = grammar({
         choice(seq("contains", $.string), seq("is", $.string)),
       ),
 
+    comment: ($) => /\;.*/,
     identifier: ($) => /[A-Za-z0-9_-]+/,
     string: ($) => seq('"', /[^"]*/, '"'),
   },
