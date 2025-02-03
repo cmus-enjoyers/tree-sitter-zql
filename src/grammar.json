@@ -159,7 +159,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "identifier_member"
         },
         {
           "type": "CHOICE",
@@ -193,6 +193,10 @@
           ]
         }
       ]
+    },
+    "identifier_member": {
+      "type": "PATTERN",
+      "value": "[A-Za-z0-9_-]+"
     },
     "comment": {
       "type": "PATTERN",

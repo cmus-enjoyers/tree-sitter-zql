@@ -34,6 +34,16 @@
     }
   },
   {
+    "type": "identifier",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "identifier_member",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "require_statement",
     "named": true,
     "fields": {},
@@ -90,7 +100,7 @@
       "required": true,
       "types": [
         {
-          "type": "identifier",
+          "type": "identifier_member",
           "named": true
         },
         {
@@ -131,10 +141,6 @@
   {
     "type": "hide",
     "named": false
-  },
-  {
-    "type": "identifier",
-    "named": true
   },
   {
     "type": "is",

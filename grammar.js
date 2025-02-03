@@ -35,10 +35,11 @@ module.exports = grammar({
     whereContains_statement: ($) =>
       seq(
         "where",
-        $.identifier,
+        $.identifier_member,
         choice(seq("contains", $.string), seq("is", $.string)),
       ),
 
+    identifier_member: () => /[A-Za-z0-9_-]+/,
     comment: ($) => /\;.*/,
     identifier: ($) => /[A-Za-z0-9_-]+/,
     string: ($) => seq('"', /[^"]*/, '"'),

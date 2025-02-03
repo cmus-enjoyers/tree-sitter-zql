@@ -11,4 +11,4 @@
 (identifier) @variable
 (string) @string
 (comment) @comment
-
+(identifier_member) @variable.member
