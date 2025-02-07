@@ -49,7 +49,7 @@
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "identifier"
+                "name": "identifier_member"
               },
               {
                 "type": "CHOICE",
@@ -63,7 +63,7 @@
                       },
                       {
                         "type": "SYMBOL",
-                        "name": "identifier"
+                        "name": "identifier_member"
                       }
                     ]
                   },
@@ -100,7 +100,7 @@
                 },
                 {
                   "type": "SYMBOL",
-                  "name": "identifier"
+                  "name": "identifier_member"
                 }
               ]
             },
@@ -109,7 +109,7 @@
               "members": [
                 {
                   "type": "SYMBOL",
-                  "name": "identifier"
+                  "name": "identifier_member"
                 },
                 {
                   "type": "STRING",
@@ -117,7 +117,7 @@
                 },
                 {
                   "type": "SYMBOL",
-                  "name": "identifier"
+                  "name": "identifier_member"
                 }
               ]
             }
@@ -146,7 +146,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "identifier_member"
         }
       ]
     },
@@ -182,6 +182,32 @@
               "members": [
                 {
                   "type": "STRING",
+                  "value": "or"
+                },
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "identifier_member"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "contains"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "string"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
                   "value": "is"
                 },
                 {
@@ -201,10 +227,6 @@
     "comment": {
       "type": "PATTERN",
       "value": "\\;.*"
-    },
-    "identifier": {
-      "type": "PATTERN",
-      "value": "[A-Za-z0-9_-]+"
     },
     "string": {
       "type": "SEQ",

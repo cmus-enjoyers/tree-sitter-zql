@@ -17,31 +17,36 @@ module.exports = grammar({
     require_statement: ($) =>
       seq(
         "require",
-        repeat(seq($.identifier, optional(seq("as", $.identifier)))),
+        repeat(
+          seq($.identifier_member, optional(seq("as", $.identifier_member))),
+        ),
       ),
 
     addFrom_statement: ($) =>
       seq(
         "add",
         choice(
-          seq("all", "from", $.identifier),
-          seq($.identifier, "from", $.identifier),
+          seq("all", "from", $.identifier_member),
+          seq($.identifier_member, "from", $.identifier_member),
         ),
         optional($.whereContains_statement),
       ),
 
-    hide_statement: ($) => seq("hide", $.identifier),
+    hide_statement: ($) => seq("hide", $.identifier_member),
 
     whereContains_statement: ($) =>
       seq(
         "where",
         $.identifier_member,
-        choice(seq("contains", $.string), seq("is", $.string)),
+        choice(
+          seq("contains", $.string),
+          seq("or", seq($.identifier_member, "contains", $.string)),
+          seq("is", $.string),
+        ),
       ),
 
     identifier_member: () => /[A-Za-z0-9_-]+/,
     comment: ($) => /\;.*/,
-    identifier: ($) => /[A-Za-z0-9_-]+/,
     string: ($) => seq('"', /[^"]*/, '"'),
   },
 });

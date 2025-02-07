@@ -8,7 +8,7 @@
       "required": true,
       "types": [
         {
-          "type": "identifier",
+          "type": "identifier_member",
           "named": true
         },
         {
@@ -27,21 +27,11 @@
       "required": true,
       "types": [
         {
-          "type": "identifier",
+          "type": "identifier_member",
           "named": true
         }
       ]
     }
-  },
-  {
-    "type": "identifier",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "identifier_member",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "require_statement",
@@ -52,7 +42,7 @@
       "required": false,
       "types": [
         {
-          "type": "identifier",
+          "type": "identifier_member",
           "named": true
         }
       ]
@@ -143,7 +133,15 @@
     "named": false
   },
   {
+    "type": "identifier_member",
+    "named": true
+  },
+  {
     "type": "is",
+    "named": false
+  },
+  {
+    "type": "or",
     "named": false
   },
   {
