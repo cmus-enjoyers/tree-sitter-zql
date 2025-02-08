@@ -17,22 +17,20 @@ module.exports = grammar({
     require_statement: ($) =>
       seq(
         "require",
-        repeat(
-          seq($.identifier_member, optional(seq("as", $.identifier_member))),
-        ),
+        repeat(seq($.identifier, optional(seq("as", $.identifier)))),
       ),
 
     addFrom_statement: ($) =>
       seq(
         "add",
         choice(
-          seq("all", "from", $.identifier_member),
-          seq($.identifier_member, "from", $.identifier_member),
+          seq("all", "from", $.identifier),
+          seq($.identifier, "from", $.identifier),
         ),
         optional($.whereContains_statement),
       ),
 
-    hide_statement: ($) => seq("hide", $.identifier_member),
+    hide_statement: ($) => seq("hide", $.identifier),
 
     whereContains_statement: ($) =>
       seq(
@@ -40,7 +38,7 @@ module.exports = grammar({
         $.identifier_member,
         choice(
           seq("contains", $.string),
-          seq("or", seq($.identifier_member, "contains", $.string)),
+          seq("or", seq($.identifier, "contains", $.string)),
           seq("is", $.string),
         ),
       ),
