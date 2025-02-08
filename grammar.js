@@ -36,11 +36,8 @@ module.exports = grammar({
       seq(
         "where",
         $.identifier_member,
-        choice(
-          seq("contains", $.string),
-          seq("or", seq($.identifier, "contains", $.string)),
-          seq("is", $.string),
-        ),
+        choice(seq("contains", $.string), seq("is", $.string)),
+        optional(repeat(seq("or", seq($.identifier, "contains", $.string)))),
       ),
 
     identifier_member: () => /[A-Za-z0-9_-]+/,
