@@ -46,6 +46,7 @@ module.exports = grammar({
       ),
 
     identifier_member: () => /[A-Za-z0-9_-]+/,
+    identifier: () => /[A-Za-z0-9_-]+/,
     comment: ($) => /\;.*/,
     string: ($) => seq('"', /[^"]*/, '"'),
   },
