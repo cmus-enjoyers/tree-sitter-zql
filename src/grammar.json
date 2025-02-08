@@ -224,6 +224,10 @@
       "type": "PATTERN",
       "value": "[A-Za-z0-9_-]+"
     },
+    "identifier": {
+      "type": "PATTERN",
+      "value": "[A-Za-z0-9_-]+"
+    },
     "comment": {
       "type": "PATTERN",
       "value": "\\;.*"
@@ -256,5 +260,6 @@
   "precedences": [],
   "externals": [],
   "inline": [],
-  "supertypes": []
+  "supertypes": [],
+  "reserved": {}
 }
