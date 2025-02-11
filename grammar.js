@@ -31,7 +31,7 @@ module.exports = grammar({
 
     hide_statement: ($) => seq("hide", $.identifier),
 
-    filter: ($) => seq($.string, choice("is", "contains"), $.string),
+    filter: ($) => seq($.identifier_member, choice("is", "contains"), $.string),
 
     whereContains_statement: ($) =>
       seq(
