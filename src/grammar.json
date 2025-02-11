@@ -150,6 +150,32 @@
         }
       ]
     },
+    "filter": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "identifier_member"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "is"
+            },
+            {
+              "type": "STRING",
+              "value": "contains"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "string"
+        }
+      ]
+    },
     "whereContains_statement": {
       "type": "SEQ",
       "members": [
@@ -159,7 +185,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "identifier_member"
+          "name": "filter"
         },
         {
           "type": "CHOICE",
@@ -205,21 +231,8 @@
                     "value": "or"
                   },
                   {
-                    "type": "SEQ",
-                    "members": [
-                      {
-                        "type": "SYMBOL",
-                        "name": "identifier"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "contains"
-                      },
-                      {
-                        "type": "SYMBOL",
-                        "name": "string"
-                      }
-                    ]
+                    "type": "SYMBOL",
+                    "name": "filter"
                   }
                 ]
               }

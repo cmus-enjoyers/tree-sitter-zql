@@ -32,12 +32,14 @@ module.exports = grammar({
 
     hide_statement: ($) => seq("hide", $.identifier),
 
+    filter: ($) => seq($.identifier_member, choice("is", "contains"), $.string),
+
     whereContains_statement: ($) =>
       seq(
         "where",
-        $.identifier_member,
+        $.filter,
         choice(seq("contains", $.string), seq("is", $.string)),
-        optional(repeat(seq("or", seq($.identifier, "contains", $.string)))),
+        optional(repeat(seq("or", $.filter))),
       ),
 
     identifier_member: () => /[A-Za-z0-9_-]+/,
