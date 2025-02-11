@@ -155,7 +155,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "identifier_member"
+          "name": "string"
         },
         {
           "type": "CHOICE",

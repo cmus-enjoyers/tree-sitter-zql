@@ -23,16 +23,15 @@ module.exports = grammar({
     addFrom_statement: ($) =>
       seq(
         "add",
-        choice(
-          seq("all", "from", $.identifier),
-          seq($.identifier, "from", $.identifier),
-        ),
+        "all",
+        "from",
+        $.identifier,
         optional($.whereContains_statement),
       ),
 
     hide_statement: ($) => seq("hide", $.identifier),
 
-    filter: ($) => seq($.identifier_member, choice("is", "contains"), $.string),
+    filter: ($) => seq($.string, choice("is", "contains"), $.string),
 
     whereContains_statement: ($) =>
       seq(

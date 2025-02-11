@@ -27,10 +27,6 @@
       "required": true,
       "types": [
         {
-          "type": "identifier_member",
-          "named": true
-        },
-        {
           "type": "string",
           "named": true
         }
@@ -51,16 +47,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "identifier",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "identifier_member",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "require_statement",
@@ -160,6 +146,10 @@
   {
     "type": "hide",
     "named": false
+  },
+  {
+    "type": "identifier",
+    "named": true
   },
   {
     "type": "is",
